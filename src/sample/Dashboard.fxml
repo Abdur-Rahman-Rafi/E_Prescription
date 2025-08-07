@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="562.0" prefWidth="986.0" stylesheets="@modernStyle.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Dashboard">
+   <AnchorPane stylesheets="@modernStyle.css">
+
+   <children>
+      <VBox prefHeight="620.0" prefWidth="238.0" style="-fx-background-color: #ae9deb;" styleClass="linear-grad" stylesheets="@../css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="76.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/pngegg.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="80.0" top="40.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="233.0" text="WELCOME" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="btnhome" alignment="TOP_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="210.0" styleClass="button-menu" stylesheets="@../css/style.css" text="Home">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_Home_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" top="8.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="9.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnptn" alignment="TOP_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="210.0" styleClass="button-menu" stylesheets="@../css/style.css" text="Patients">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" top="8.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="9.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnpres" alignment="TOP_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="210.0" styleClass="button-menu" stylesheets="@../css/style.css" text="Prescriptions">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_Xbox_Menu_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" top="8.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="9.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnaddmed" alignment="TOP_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="210.0" styleClass="button-menu" stylesheets="@../css/style.css" text="Add Medicine">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_Xbox_Menu_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" top="8.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="9.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnedit" alignment="TOP_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="210.0" styleClass="button-menu" stylesheets="@../css/style.css" text="Manage Profile">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_Slider__32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" top="8.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="9.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnchat1" alignment="TOP_LEFT" graphicTextGap="15.0" layoutX="19.0" layoutY="418.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="210.0" styleClass="button-menu" stylesheets="@../css/style.css" text="Chat">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/1200px-Chat_icon.svg-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" top="8.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="9.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnsignout" alignment="TOP_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="210.0" styleClass="button-menu" stylesheets="@../css/style.css" text="Sign Out">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" top="8.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="9.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <StackPane layoutX="235.0" layoutY="-2.0" prefHeight="639.0" prefWidth="755.0">
+         <children>
+            <Pane fx:id="pnPrescription" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom right, #283593, #1e88e5);">
+               <children>
+                  <Label layoutX="29.0" layoutY="30.0" text="Prescriptions" textFill="#5e5b5b">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="29.0" layoutY="65.0" prefHeight="60.0" prefWidth="528.0" style="-fx-background-color: #b8b8ff;">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="115.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="121.0" text="150" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="121.0" text="Total Patients">
+                                 <VBox.margin>
+                                    <Insets top="-6.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="115.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="117.0" text="200" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="119.0" text="Total Prescriptions">
+                                 <VBox.margin>
+                                    <Insets top="-6.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="115.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="119.0" text="2000" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="119.0" text="Total Medicines">
+                                 <VBox.margin>
+                                    <Insets top="-6.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="115.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="123.0" text="112" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="32.0" prefWidth="121.0" text="Total Tests">
+                                 <VBox.margin>
+                                    <Insets top="-6.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="29.0" layoutY="158.0" prefHeight="50.0" prefWidth="698.0" style="-fx-background-color: #b8b8ff;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="138.0" text="Patient Name">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="100.0" text="Pateint ID">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="55.0" prefWidth="72.0" text="Tests">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="55.0" prefWidth="72.0" text="Date">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="115.0" text="Status">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="652.0" layoutY="15.0" prefHeight="30.0" prefWidth="89.0">
+                     <children>
+                        <Circle fx:id="btnclose3" fill="#31ff21" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnclose2" fill="#ffad21" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnclose1" fill="#ff2121" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="btnnewpres" layoutX="562.0" layoutY="65.0" onMouseClicked="#handleMouseEvent" prefHeight="60.0" prefWidth="173.0">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="37.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/images-removebg-preview.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets top="11.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="137.0" text="Create Prescription">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="pres_tab" layoutX="29.0" layoutY="208.0" prefHeight="300.0" prefWidth="698.0">
+                    <columns>
+                      <TableColumn fx:id="pres_tabname" prefWidth="142.0" text="Name" />
+                      <TableColumn fx:id="pres_tabid" minWidth="8.0" prefWidth="212.0" text="Patient ID" />
+                        <TableColumn fx:id="pres_tabno" minWidth="8.0" prefWidth="212.0" text="Prescription No." />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="pnMedicine" prefHeight="603.0" prefWidth="774.0" style="-fx-background-color: linear-gradient(to bottom right, #283593, #1e88e5);">
+               <children>
+                  <Label alignment="CENTER" layoutX="335.0" layoutY="78.0" text="Add Medicine" textAlignment="CENTER" textFill="#ffeaea">
+                     <font>
+                        <Font name="Arial Bold" size="37.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="286.0" layoutY="149.0" text="Medicine Information">
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="652.0" layoutY="14.0" prefHeight="30.0" prefWidth="89.0">
+                     <children>
+                        <Circle fx:id="btnclose3" fill="#31ff21" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fill="#ffad21" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnclose1" fill="#ff2121" onDragDetected="#handleMouseEvent" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER_RIGHT" layoutX="251.0" layoutY="209.0" prefHeight="30.0" prefWidth="99.0" text="Name:">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="235.0" layoutY="268.0" prefHeight="43.0" prefWidth="115.0" text="Generic:">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="150.0" layoutY="323.0" prefHeight="43.0" prefWidth="200.0" text="Additional Info:">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="m_tfname" layoutX="378.0" layoutY="212.0" prefHeight="25.0" prefWidth="200.0" />
+                  <TextField fx:id="m_tfgen" layoutX="378.0" layoutY="271.0" prefHeight="25.0" prefWidth="200.0" />
+                  <TextArea layoutX="378.0" layoutY="323.0" prefHeight="98.0" prefWidth="200.0" />
+                  <Button fx:id="medsave" layoutX="441.0" layoutY="459.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="60.0" prefWidth="107.0" style="-fx-background-color: #30e168;" styleClass="button-save" stylesheets="@style.css" text="Save">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+            <Pane fx:id="pnNewPres" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom right, #283593, #1e88e5);">
+               <children>
+                  <Label layoutX="14.0" layoutY="13.0" text="New Prescription">
+                     <font>
+                        <Font name="Arial" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pres_namelabel" layoutX="25.0" layoutY="88.0" prefHeight="32.0" prefWidth="308.0" text="Patients Name : ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pres_agelabel" layoutX="25.0" layoutY="126.0" prefHeight="32.0" prefWidth="308.0" text="Patients Age : ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pres_genlabel" layoutX="548.0" layoutY="126.0" prefHeight="32.0" prefWidth="107.0" text="Gender : ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dob" layoutX="548.0" layoutY="88.0" prefHeight="32.0" prefWidth="138.0" text="DOB: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="16.0" layoutY="196.0" prefHeight="32.0" prefWidth="124.0" text="Med Name :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Line endX="588.0" layoutX="132.0" layoutY="178.0" startX="-100.0" stroke="#a39bfc" />
+                  <Label layoutX="378.0" layoutY="196.0" prefHeight="43.0" prefWidth="149.0" text="Med Strength :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="med_tfstren" layoutX="527.0" layoutY="200.0" />
+                  <ComboBox fx:id="medicine_combo" layoutX="154.0" layoutY="200.0" prefWidth="150.0" />
+                  <Label layoutX="25.0" layoutY="253.0" prefHeight="32.0" prefWidth="130.0" text="Med Dose :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="med_tfdose" layoutX="155.0" layoutY="257.0" />
+                  <Label layoutX="378.0" layoutY="253.0" prefHeight="32.0" prefWidth="149.0" text="Med Duration :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="med_tfduration" layoutX="527.0" layoutY="257.0" />
+                  <Label layoutX="25.0" layoutY="307.0" prefHeight="32.0" prefWidth="130.0" text="Med Advice :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="med_tfad" layoutX="155.0" layoutY="311.0" />
+                  <HBox layoutX="658.0" layoutY="11.0" prefHeight="30.0" prefWidth="89.0">
+                     <children>
+                        <Circle fill="#31ff21" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fill="#ffad21" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnclose3" fill="#ff2121" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                     </children>
+                  </HBox>
+                  <Button fx:id="pres_save" layoutX="397.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #30e168;" styleClass="button-save" stylesheets="@style.css" text="Save">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="166.0" layoutY="43.0" prefHeight="32.0" prefWidth="138.0" text="Select Patient:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="pn_combo" layoutX="312.0" layoutY="47.0" prefWidth="150.0" promptText="Patients Names" />
+                  <Button fx:id="pres_add" layoutX="477.0" layoutY="44.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #30e168;" styleClass="button-save" stylesheets="@style.css" text="ADD">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="pres_table" editable="true" layoutX="27.0" layoutY="370.0" prefHeight="200.0" prefWidth="698.0">
+                    <columns>
+                      <TableColumn fx:id="m_tabname" prefWidth="134.0" text="Name" />
+                      <TableColumn fx:id="m_tabstrength" prefWidth="125.0" text="Strength" />
+                        <TableColumn fx:id="m_tabdose" prefWidth="117.0" text="Dose" />
+                        <TableColumn fx:id="m_tabdur" prefWidth="120.0" text="Duration" />
+                        <TableColumn fx:id="m_tabad" prefWidth="131.0" text="Advice" />
+                        <TableColumn fx:id="m_tabstat" minWidth="5.0" prefWidth="70.0" text="Status" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="refresh_pres" layoutX="483.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="41.0" prefWidth="107.0" style="-fx-background-color: #30e168;" styleClass="button-save" stylesheets="@style.css" text="Refresh">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="pnPatlist" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom right, #283593, #1e88e5);">
+               <children>
+                  <HBox layoutX="657.0" layoutY="11.0" prefHeight="30.0" prefWidth="89.0">
+                     <children>
+                        <Circle fill="#31ff21" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fill="#ffad21" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnclose4" fill="#ff2121" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                     </children>
+                  </HBox>
+                  <Label layoutX="31.0" layoutY="37.0">
+                     <font>
+                        <Font name="System Bold" size="43.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="31.0" layoutY="86.0" prefHeight="50.0" prefWidth="689.0">
+                     <children>
+                        <HBox prefHeight="63.0" prefWidth="692.0" style="-fx-background-color: #b8b8ff;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="66.0" text="Name:">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="112.0" text="DOB">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="50.0" text="Age">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="109.0" text="Phone">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="91.0" text="Gender">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="110.0" text="Patient ID">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="485.0" layoutY="27.0" prefHeight="60.0" prefWidth="233.0">
+                     <children>
+                        <TextField fx:id="searchField" prefHeight="33.0" prefWidth="161.0" promptText="Search">
+                           <HBox.margin>
+                              <Insets top="13.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" style="-fx-background-color: #0099FF;" text="Search" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="3.0" top="13.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+
+                  <HBox fx:id="btnaddptn" layoutX="317.0" layoutY="27.0" onMouseClicked="#handleMouseEvent" prefHeight="60.0" prefWidth="154.0">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="37.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/images-removebg-preview.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets top="11.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="122.0" text="Add Patient">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="1.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="plist_tab" layoutX="31.0" layoutY="216.0" prefHeight="352.0" prefWidth="689.0">
+                    <columns>
+                      <TableColumn fx:id="p_tabname" prefWidth="247.0" text="Name" />
+                      <TableColumn fx:id="p_tabdob" prefWidth="113.0" text="Date Of Birth" />
+                        <TableColumn fx:id="p_tabage" minWidth="6.0" prefWidth="59.0" text="Age" />
+                        <TableColumn fx:id="p_tabphone" prefWidth="114.0" text="Phone" />
+                        <TableColumn fx:id="p_tabgen" prefWidth="73.0" text="Gender" />
+                        <TableColumn fx:id="p_tabid" prefWidth="82.0" text="Patient ID" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="pnPatuent" style="-fx-background-color: linear-gradient(to bottom right, #283593, #1e88e5);">
+               <children>
+                  <HBox layoutX="652.0" layoutY="14.0" prefHeight="30.0" prefWidth="89.0">
+                     <children>
+                        <Circle fx:id="btnminimize" accessibleRole="BUTTON" fill="#31ff21" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnfullscreen" accessibleRole="BUTTON" fill="#ffad21" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnclose" accessibleRole="BUTTON" fill="#ff2121" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                     </children>
+                  </HBox>
+                  <Label layoutX="294.0" layoutY="34.0" prefHeight="47.0" prefWidth="238.0" text="Add New Patients" textFill="#ee7c7c">
+                     <font>
+                        <Font name="Calibri" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="180.0" layoutY="129.0" prefHeight="26.0" prefWidth="150.0" text="Name:" textAlignment="RIGHT">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="180.0" layoutY="187.0" prefHeight="26.0" prefWidth="150.0" text="Date:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="182.0" layoutY="346.0" prefHeight="26.0" prefWidth="150.0" text="Phone:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="182.0" layoutY="400.0" prefHeight="26.0" prefWidth="150.0" text="Email:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="182.0" layoutY="298.0" prefHeight="26.0" prefWidth="150.0" text="Gender:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="180.0" layoutY="240.0" prefHeight="37.0" prefWidth="154.0" text="Age:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfp_name" layoutX="370.0" layoutY="130.0" />
+                  <TextField fx:id="tf_pphone" layoutX="370.0" layoutY="346.0" />
+                  <TextField fx:id="tf__pemail" layoutX="370.0" layoutY="396.0" />
+                  <TextField fx:id="tf_page" layoutX="370.0" layoutY="239.0" />
+                  <Button fx:id="btnPsave" layoutX="312.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="86.0" style="-fx-background-color: #30e168;" styleClass="button-save" stylesheets="@../css/style.css" text="Save">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btncancel" layoutX="459.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleButtonAction" styleClass="button-cancel" stylesheets="@../css/style.css" text="Cancel">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <DatePicker fx:id="tf_pdob" layoutX="370.0" layoutY="175.0" prefHeight="39.0" prefWidth="157.0"
+                              style="-fx-background-color: #f5f5f5;
+                   -fx-border-radius: 10px;
+                   -fx-background-radius: 10px;
+                   -fx-border-color: #d1d1d1;
+                   -fx-border-width: 2px;
+                   -fx-font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
+                   -fx-font-size: 14px;
+                   -fx-padding: 5px;" />
+
+                  <ComboBox fx:id="genCombo" layoutX="371.0" layoutY="290.0" prefHeight="37.0" prefWidth="154.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pneditinfo" style="-fx-background-color: linear-gradient(to bottom right, #283593, #1e88e5);">
+               <children>
+                  <HBox layoutX="652.0" layoutY="14.0" prefHeight="30.0" prefWidth="89.0">
+                     <children>
+                        <Circle fill="#31ff21" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnfullScreen" fill="#ffad21" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnclose21" fill="#ff2121" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                     </children>
+                  </HBox>
+                  <Label layoutX="68.0" layoutY="44.0" prefHeight="47.0" prefWidth="130.0" text="Edit Info">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="180.0" layoutY="117.0" prefHeight="26.0" prefWidth="150.0" text="Name:" textAlignment="RIGHT">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfname" layoutX="370.0" layoutY="110.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="180.0" layoutY="173.0" prefHeight="26.0" prefWidth="150.0" text="Date:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="180.0" layoutY="334.0" prefHeight="26.0" prefWidth="150.0" text="Department">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfdepartment" layoutX="370.0" layoutY="330.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="180.0" layoutY="381.0" prefHeight="26.0" prefWidth="150.0" text="Email">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfemail" layoutX="370.0" layoutY="377.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="180.0" layoutY="276.0" prefHeight="26.0" prefWidth="150.0" text="Gender:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnsave" layoutX="325.0" layoutY="440.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="100.0" style="-fx-background-color: #30e168;" styleClass="button-save" stylesheets="@../css/style.css" text="Update">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btncancel1" layoutX="460.0" layoutY="440.0" mnemonicParsing="false" onAction="#handleButtonAction" styleClass="button-cancel" stylesheets="@../css/style.css" text="Cancel">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Label alignment="CENTER_RIGHT" layoutX="180.0" layoutY="231.0" prefHeight="26.0" prefWidth="150.0" text="Designantion:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfdes" layoutX="370.0" layoutY="227.0" />
+                  <DatePicker fx:id="tfdob" layoutX="370.0" layoutY="161.0" prefHeight="41.0" prefWidth="157.0" />
+                  <ComboBox fx:id="genCombo2" layoutX="370.0" layoutY="276.0" prefHeight="37.0" prefWidth="157.0" />
+               </children>
+            </Pane>
+      
+            <Pane fx:id="pnHome" prefHeight="630.0" prefWidth="755.0" style="-fx-background-color: linear-gradient(to bottom right, #283593, #1e88e5);">
+               <children>
+                  <Label fx:id="welcomeText" layoutX="105.0" layoutY="84.0" style="     -fx-background-color: #4CAF50;     -fx-text-fill: white;     -fx-padding: 20;     -fx-background-radius: 30;     -fx-border-radius: 30;     -fx-font-family: 'Roboto'; " text="Hi," xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+                     <font>
+                        <Font name="Arial Black" size="42.0" />
+                     </font>
+                     <effect>
+                        <DropShadow color="rgba(0,0,0,0.4)" offsetX="4" offsetY="4" radius="10" />
+                     </effect>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="227.0" layoutY="120.0" prefHeight="70.0" prefWidth="400.0" text="Profile Information" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Cambria" size="64.0" />
+                     </font>
+                     <style>
+                        -fx-text-fill: #3949ab;
+                        -fx-background-color: #d1c4e9;
+                        -fx-padding: 15;
+                        -fx-border-radius: 10;
+                        -fx-background-radius: 10;
+                     </style>
+                  </Label>
+                  <ImageView fitHeight="251.0" fitWidth="212.0" layoutX="508.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/pngegg.png" />
+                     </image>
+                     <style>
+                        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 20, 0.5, 0.0, 0.0);
+                     </style>
+                  </ImageView>
+                  <Label fx:id="home_name" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="217.0" layoutY="225.0" prefHeight="50.0" prefWidth="250.0" stylesheets="@modernStyle.css">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                     <style>
+                        -fx-text-fill: #000;
+                        -fx-background-color: #ffcc80;
+                        -fx-padding: 10;
+                     </style>
+                        <padding>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                  </Label>
+                  <Label fx:id="home_email" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="217.0" layoutY="400.0" prefHeight="30.0" prefWidth="250.0">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                     <style>
+                        -fx-text-fill: #000;
+                        -fx-background-color: #ffcc80;
+                        -fx-padding: 10;
+                     </style>
+                  </Label>
+                  <Label fx:id="home_desig" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="217.0" layoutY="285.0" prefHeight="30.0" prefWidth="250.0">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                     <style>
+                        -fx-text-fill: #000;
+                        -fx-background-color: #ffcc80;
+                        -fx-padding: 10;
+                     </style>
+                  </Label>
+                  <Label fx:id="home_dept" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="217.0" layoutY="344.0" prefHeight="30.0" prefWidth="250.0">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                     <style>
+                        -fx-text-fill: #000;
+                        -fx-background-color: #ffcc80;
+                        -fx-padding: 10;
+                     </style>
+                  </Label>
+                  <HBox layoutX="652.0" layoutY="14.0" prefHeight="30.0" prefWidth="89.0">
+                     <children>
+                        <Circle fx:id="btnminimize" accessibleRole="BUTTON" fill="#31ff21" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnfullscreen" accessibleRole="BUTTON" fill="#ffad21" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Circle fx:id="btnclose" accessibleRole="BUTTON" fill="#ff2121" onMouseClicked="#handleMouseEvent" radius="10.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Circle>
+                     </children>
+                  </HBox>
+                  <Label fx:id="home_name1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="38.0" layoutY="225.0" prefHeight="30.0" prefWidth="173.0" text="Name:">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                     <style>-fx-text-fill: #ecbdfc;</style>
+                        <textFill>
+                           <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                              <stops>
+                                 <Stop>
+                                    <color>
+                                       <Color red="0.9473684430122375" green="0.8289473652839661" blue="0.8289473652839661" />
+                                    </color>
+                                 </Stop>
+                                 <Stop offset="1.0">
+                                    <color>
+                                       <Color red="1.0" green="1.0" blue="1.0" />
+                                    </color>
+                                 </Stop>
+                              </stops>
+                           </RadialGradient>
+                        </textFill>
+                  </Label>
+                  <Label fx:id="home_name11" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="38.0" layoutY="285.0" prefHeight="30.0" prefWidth="173.0" text="Designation:">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                     <style>-fx-text-fill: #ecbdfc;</style>
+                  </Label>
+                  <Label fx:id="home_name111" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="38.0" layoutY="344.0" prefHeight="30.0" prefWidth="173.0" text="Department:">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                     <style>-fx-text-fill: #ecbdfc;</style>
+                  </Label>
+                  <Label fx:id="home_name1111" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="38.0" layoutY="405.0" prefHeight="30.0" prefWidth="173.0" text="Email:">
+                     <font>
+                        <Font name="Arial Black" size="35.0" />
+                     </font>
+                     <style>-fx-text-fill: #ecbdfc;</style>
+                  </Label>
+               </children>
+            </Pane>
+
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
+</AnchorPane>
